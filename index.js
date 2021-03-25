@@ -14,12 +14,12 @@ http.listen(config.port, () => {
 
 app.get('/dorfi', (req, res) => {
     res.contentType('image/jpg');
-    res.sendFile(`${__dirname}\\assets\\images\\portrait.jpg`);
+    res.sendFile(`${__dirname}/assets/images/portrait.jpg`);
 });
 
 app.get('/me', (req, res) => {
     res.contentType('image/jpg');
-    res.sendFile(`${__dirname}\\assets\\images\\portrait-2.jpg`);
+    res.sendFile(`${__dirname}/assets/images/portrait-2.jpg`);
 });
 
 app.get('/', (req, res) => {
