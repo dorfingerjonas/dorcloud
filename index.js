@@ -22,6 +22,12 @@ app.get('/me', (req, res) => {
     res.sendFile(`${__dirname}/assets/images/portrait-2.jpg`);
 });
 
+app.get('/geotiff', (req, res) => {
+    res.contentType('image/tiff');
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.sendFile(`${__dirname}/assets/images/geotiff.tif`);
+});
+
 app.get('/', (req, res) => {
     res.contentType('application/json');
     res.send('API Server is running');
