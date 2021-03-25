@@ -27,8 +27,6 @@ app.get('/me', (req, res) => {
 
 app.get('/geotiff', (req, res) => {
     res.contentType('image/tiff');
-
-    console.log(req.originalUrl);
     
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
