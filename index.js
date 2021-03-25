@@ -1,11 +1,14 @@
 const express = require('express');
 const app = express();
+var cors = require('cors')
 const http = require('http').createServer(app);
 
 // config
 const config = {
     port: 80
 };
+
+app.use(cors())
 
 // start express server on port
 http.listen(config.port, () => {
@@ -24,6 +27,8 @@ app.get('/me', (req, res) => {
 
 app.get('/geotiff', (req, res) => {
     res.contentType('image/tiff');
+
+    console.log(req.originalUrl);
     
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
