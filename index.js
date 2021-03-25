@@ -24,7 +24,11 @@ app.get('/me', (req, res) => {
 
 app.get('/geotiff', (req, res) => {
     res.contentType('image/tiff');
+    
     res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
     res.sendFile(`${__dirname}/assets/images/geotiff.tif`);
 });
 
